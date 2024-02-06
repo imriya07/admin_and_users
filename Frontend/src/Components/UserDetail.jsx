@@ -7,7 +7,7 @@ function UserDetail() {
     const {id} = useParams()
     const navigate = useNavigate()
     useEffect(() =>{
-        axios.get('http://localhost:8080/users/detail/'+id)
+        axios.get('https://admin-and-users.vercel.app/users/detail/'+id)
         .then(result => {
             setUsers(result.data[0])
         })
@@ -15,7 +15,7 @@ function UserDetail() {
     }, [])
     axios.defaults.withCredentials = true
     const handleLogout = () => {
-        axios.get('http://localhost:8080/users/logout')
+        axios.get('https://admin-and-users.vercel.app/users/logout')
         .then(result =>{
             if(result.data.Status){
                 localStorage.removeItem("valid")
@@ -25,7 +25,7 @@ function UserDetail() {
     }
     const handleEdit = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:8080/users/edit_users/' + id, users)
+        axios.put('https://admin-and-users.vercel.app/users/edit_users/' + id, users)
         .then(result => {
             if(result.data.Status){
                 navigate('/edituserone')
@@ -86,7 +86,7 @@ function UserDetail() {
                     <div className='col-md-1'></div>
                 <div className='abc col-md-6'>
                     <h4 className='mt-3 user_profile'>User Profile</h4>
-                    <img className='img-fluid image_user mt-3' src={`http://localhost:8080/Images/`+users.image} alt="" />
+                    <img className='img-fluid image_user mt-3' src={`https://admin-and-users.vercel.app/Images/`+users.image} alt="" />
                     <div className='user_name mt-3'>
                     <h3>Name: {users.name}</h3>
                     <h3>Email: {users.email}</h3>

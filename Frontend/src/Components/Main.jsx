@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 function Main() {
   const navigate = useNavigate()
   useEffect(() => {
-    axios.get('http://localhost:8080/verify')
+    axios.get('https://admin-and-users.vercel.app/verify')
       .then(result => {
         if (result.data.Status) {
           if (result.data.role === "admin") {

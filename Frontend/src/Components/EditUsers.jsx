@@ -16,7 +16,7 @@ function EditUsers() {
 
 
     useEffect(()=>{
-        axios.get('http://localhost:8080/auth/category')
+        axios.get('https://admin-and-users.vercel.app/auth/category')
         .then(result =>{
             if(result.data.Status){
                 setCategory(result.data.Result)
@@ -24,7 +24,7 @@ function EditUsers() {
                 alert(result.data.Error)
             }
         }).catch(err => console.log(err))
-        axios.get('http://localhost:8080/auth/users/' + id)
+        axios.get('https://admin-and-users.vercel.app/auth/users/' + id)
         .then(result =>{
             setUsers({
                 ...users,
@@ -38,7 +38,7 @@ function EditUsers() {
     },[])
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:8080/auth/edit_users/' + id, users)
+        axios.put('https://admin-and-users.vercel.app/auth/edit_users/' + id, users)
         .then(result => {
             if(result.data.Status){
                 navigate('/dashboard/users')

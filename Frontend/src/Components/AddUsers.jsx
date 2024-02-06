@@ -16,7 +16,7 @@ function AddUsers() {
     const navigate = useNavigate()
 
     useEffect(()=>{
-        axios.get('http://localhost:8080/auth/category')
+        axios.get('https://admin-and-users.vercel.app/auth/category')
         .then(result =>{
             if(result.data.Status){
                 setCategory(result.data.Result)
@@ -35,7 +35,7 @@ function AddUsers() {
         formData.append('phone',users.phone);
         formData.append('image',users.image);
         formData.append('category_id',users.category_id);
-        axios.post('http://localhost:8080/auth/add_users', formData)
+        axios.post('https://admin-and-users.vercel.app/auth/add_users', formData)
         .then(result => {
             if (result.data.Status) {
                 navigate('/dashboard/users')

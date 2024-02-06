@@ -13,7 +13,7 @@ function Login() {
     axios.defaults.withCredentials = true;
     const handleSubmit = (event) =>{
         event.preventDefault()
-        axios.post('http://localhost:8080/auth/adminlogin',values)
+        axios.post('https://admin-and-users.vercel.app/auth/adminlogin',values)
         .then(result => {
             if(result.data.loginStatus){
                 localStorage.setItem("valid",true)

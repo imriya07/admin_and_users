@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Category() {
     const[category, setCategory] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:8080/auth/category')
+        axios.get('https://admin-and-users.vercel.app/auth/category')
         .then(result =>{
             if(result.data.Status){
                 setCategory(result.data.Result)

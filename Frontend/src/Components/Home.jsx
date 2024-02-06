@@ -22,7 +22,7 @@ function Home() {
   //     })
   // }
   const adminCount = () => {
-    axios.get('http://localhost:8080/auth/admin_count')
+    axios.get('https://admin-and-users.vercel.app/auth/admin_count')
       .then(result => {
         if (result.data.Status) {
           setAdminTotal(result.data.Result[0].admin)
@@ -30,7 +30,7 @@ function Home() {
       })
   }
   const usersCount = () => {
-    axios.get('http://localhost:8080/auth/users_count')
+    axios.get('https://admin-and-users.vercel.app/auth/users_count')
       .then(result => {
         if (result.data.Status) {
           setusersTotal(result.data.Result[0].users)

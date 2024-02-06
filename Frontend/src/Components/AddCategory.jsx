@@ -7,7 +7,7 @@ function AddCategory() {
     const navigate = useNavigate()
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('http://localhost:8080/auth/add_category', { category })
+        axios.post('https://admin-and-users.vercel.app/auth/add_category', { category })
             .then(result => {
                 if (result.data.Status) {
                     navigate('/dashboard/category')

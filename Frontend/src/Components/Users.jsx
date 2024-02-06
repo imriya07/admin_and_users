@@ -5,7 +5,7 @@ function Users() {
     const [users, setUsers] = useState([])
     const navigate = useNavigate()
     useEffect(() => {
-        axios.get('http://localhost:8080/auth/users')
+        axios.get('https://admin-and-users.vercel.app/auth/users')
             .then(result => {
                 if (result.data.Status) {
                     setUsers(result.data.Result)
@@ -15,7 +15,7 @@ function Users() {
             }).catch(err => console.log(err))
     }, [])
     const handleDelete = (id) => {
-        axios.delete('http://localhost:8080/auth/delete_users/' + id)
+        axios.delete('https://admin-and-users.vercel.app/auth/delete_users/' + id)
             .then(result => {
                 if (result.data.Status) {
                     window.location.reload()
@@ -47,7 +47,7 @@ function Users() {
                             users.map(e => (
                                 <tr>
                                     <td>{e.name}</td>
-                                    <td><img src={`http://localhost:8080/Images/` + e.image} className='users_image' /></td>
+                                    <td><img src={`https://admin-and-users.vercel.app/Images/` + e.image} className='users_image' /></td>
                                     <td>{e.email}</td>
                                     <td>{e.address}</td>
                                     {/* <td>{e.phone}</td> */}
