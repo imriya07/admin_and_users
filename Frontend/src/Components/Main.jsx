@@ -1,7 +1,6 @@
 import axios from 'axios'
 import React, { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Image } from '../../public/Images/main.png'
 
 
 function Main() {
@@ -22,7 +21,7 @@ function Main() {
   return (
     <div>
       <div className='d-flex flex-column justify-content-center align-items-center loginpage'>
-      <img className='hyp img-fluid' src={Image} alt="" />
+      <img className='hyp img-fluid' src="./Images/main.png" alt="" />
         <div className='d-flex flex-column justify-content-center align-items-center p-3 rounded border loginForm'>
           <h2>Login As</h2>
           <div className='d-flex judtify-content-between mt-5 mb-2'>
