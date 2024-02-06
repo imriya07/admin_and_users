@@ -7,7 +7,7 @@ import cookieParser from "cookie-parser";
 const  app = express()
 const { Jwt } = pkg;
 app.use(cors({
-    origin:["http://localhost:5173"],
+    origin:["https://admin-and-users-z5vk.vercel.app/"],
     methods:['GET','POST','PUT','DELETE'],
     credentials: true
 }))
